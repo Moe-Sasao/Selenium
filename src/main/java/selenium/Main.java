@@ -12,6 +12,7 @@ public class Main {
 		WebDriver driver = new ChromeDriver();
 		
 		driver.get("https://www.google.co.jp");
+		driver.close();
 	}
 
 }
