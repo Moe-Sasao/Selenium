@@ -17,9 +17,9 @@ public class Ex02 {
 //		ログイン
 		driver.get("http://rakuplus.jp/");
 		WebElement mailElem = driver.findElement(By.cssSelector("#user_login"));
-		mailElem.sendKeys("moe.sasao@rakus-partners.co.jp");
+		mailElem.sendKeys("");
 		WebElement passElem = driver.findElement(By.cssSelector("#user_pass"));
-		passElem.sendKeys("Snoopy26woodstock");
+		passElem.sendKeys("");
 		WebElement loginElem = driver.findElement(By.cssSelector("#wp-submit"));
 		loginElem.click();
 
