@@ -1,5 +1,6 @@
 package selenium;
 
+import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -54,6 +55,26 @@ public class Ex03 {
 				"body > div.contents > div > form > table:nth-child(5) > tbody > tr:nth-child(3) > td > table.searchCond > tbody > tr:nth-child(17) > td > input[type=text]:nth-child(10)"));
 		inputDay2.sendKeys("14");
 
-	}
+//		検索
+		driver.findElement(By.cssSelector(
+				"body > div.contents > div > form > table:nth-child(5) > tbody > tr:nth-child(3) > td > table:nth-child(2) > tbody > tr > td > a"))
+				.click();
 
+//		結果出力
+		WebElement tableElem = driver.findElement(By.cssSelector("body > div.contents > div > form > table.list-data"));
+		List<WebElement> trElements = tableElem.findElements(By.tagName("tr"));
+		for (WebElement elem : trElements) {
+			List<WebElement> tdElements = elem.findElements(By.tagName("td"));
+			int count = 0;
+			for (WebElement tdElem : tdElements) {
+				if (count < 3) {
+					System.out.print(tdElem.getText() + "\t");
+				}
+				count++;
+			}
+			System.out.println("\n---------------------");
+
+		}
+
+	}
 }
